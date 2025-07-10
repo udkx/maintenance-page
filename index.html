@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>100ВЁРСТ - Сайт временно недоступен</title>
+    <meta name="description" content="100ВЁРСТ - платформа для прямого взаимодействия грузоотправителей и перевозчиков. Без посредников. Сайт временно недоступен по техническим причинам.">
+    <meta name="keywords" content="100 верст, грузоперевозки, логистическая платформа, доставка грузов, перевозчики, грузоотправители">
+    <meta property="og:title" content="100ВЁРСТ - Сайт временно недоступен">
+    <meta property="og:description" content="Платформа для прямого взаимодействия грузоотправителей и перевозчиков. Никаких посредников. Только прямые и выгодные сделки.">
+    <meta property="og:type" content="website">
+    <meta name="robots" content="noindex, nofollow">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #d32f2f 0%, #1976d2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #333;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        body::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 30px 30px;
+            animation: move 20s linear infinite;
+            opacity: 0.5;
+        }
+        
+        @keyframes move {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(30px, 30px); }
+        }
+        
+        .container {
+            text-align: center;
+            padding: 2.5rem;
+            max-width: 600px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            margin: 1rem;
+            position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            animation: fadeIn 0.8s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .logo {
+            margin-bottom: 2rem;
+        }
+        
+        .logo h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #d32f2f 0%, #1976d2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: none;
+            margin-bottom: 0.5rem;
+        }
+        
+        .logo p {
+            font-size: 1.1rem;
+            color: #666;
+            font-weight: 500;
+        }
+        
+        .status-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 2rem;
+            background: linear-gradient(135deg, rgba(211, 47, 47, 0.2) 0%, rgba(25, 118, 210, 0.2) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            border: 2px solid rgba(25, 118, 210, 0.3);
+            box-shadow: 0 4px 20px rgba(25, 118, 210, 0.2);
+        }
+        
+        .status-icon::before {
+            content: "⚙️";
+            font-size: 40px;
+            animation: rotate 4s linear infinite;
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+            font-weight: 600;
+        }
+        
+        .description {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        
+        .time-block {
+            background: linear-gradient(135deg, rgba(211, 47, 47, 0.1) 0%, rgba(25, 118, 210, 0.1) 100%);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border: 2px solid rgba(25, 118, 210, 0.3);
+            backdrop-filter: blur(5px);
+        }
+        
+        .time-block .label {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .time-block .value {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #1976d2;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .feature {
+            padding: 1rem;
+            background: linear-gradient(135deg, rgba(211, 47, 47, 0.05) 0%, rgba(25, 118, 210, 0.05) 100%);
+            border-radius: 10px;
+            font-size: 0.9rem;
+            color: #666;
+            border: 1px solid rgba(25, 118, 210, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .feature:hover {
+            background: linear-gradient(135deg, rgba(211, 47, 47, 0.1) 0%, rgba(25, 118, 210, 0.1) 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-icon {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .info {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(25, 118, 210, 0.2);
+        }
+        
+        .info p {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+        
+        .contact {
+            margin-top: 1.5rem;
+            font-size: 1rem;
+        }
+        
+        .contact a {
+            color: #d32f2f;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .contact a:hover {
+            color: #1976d2;
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 600px) {
+            .logo h1 { font-size: 2.5rem; }
+            h2 { font-size: 1.5rem; }
+            .features {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <h1>100ВЁРСТ</h1>
+            <p>Ваше управление логистикой!</p>
+        </div>
+        
+        <div class="status-icon"></div>
+        
+        <h2>Сайт временно недоступен</h2>
+        <p class="description">
+            По техническим причинам работа платформы приостановлена.<br>
+            Мы работаем над скорейшим восстановлением сервиса.
+        </p>
+        
+        <div class="time-block">
+            <p class="label">Планируемое время возобновления работы</p>
+            <p class="value">11 июля 2025 года в 09:00 МСК</p>
+        </div>
+        
+        <div class="features">
+            <div class="feature">
+                <div class="feature-icon">🚚</div>
+                <strong>Прямые перевозки</strong><br>
+                Без посредников
+            </div>
+            <div class="feature">
+                <div class="feature-icon">✅</div>
+                <strong>Проверенные партнёры</strong><br>
+                Надёжность гарантируем
+            </div>
+            <div class="feature">
+                <div class="feature-icon">💰</div>
+                <strong>Выгодные сделки</strong><br>
+                Экономия до 30%
+            </div>
+            <div class="feature">
+                <div class="feature-icon">📱</div>
+                <strong>Онлайн платформа</strong><br>
+                Простота и удобство
+            </div>
+        </div>
+        
+        <div class="info">
+            <p>Приносим извинения за временные неудобства</p>
+            <p><strong>100ВЁРСТ</strong> — платформа для прямого взаимодействия грузоотправителей и перевозчиков</p>
+            
+            <div class="contact">
+                <p>По срочным вопросам: <a href="mailto:info@100-verst.ru">info@100-verst.ru</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
