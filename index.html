@@ -2,7 +2,8 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="format-detection" content="telephone=no">
     <title>100ВЁРСТ - Сайт временно недоступен</title>
     <meta name="description" content="100ВЁРСТ - платформа для прямого взаимодействия грузоотправителей и перевозчиков. Без посредников. Сайт временно недоступен по техническим причинам.">
     <meta name="keywords" content="100 верст, грузоперевозки, логистическая платформа, доставка грузов, перевозчики, грузоотправители">
@@ -17,6 +18,10 @@
             box-sizing: border-box;
         }
         
+        html {
+            height: 100%;
+        }
+        
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             background: linear-gradient(135deg, #d32f2f 0%, #1976d2 100%);
@@ -26,12 +31,14 @@
             justify-content: center;
             color: #333;
             position: relative;
-            overflow: hidden;
+            overflow-x: hidden;
+            padding: 20px 0;
+            background-attachment: fixed;
         }
         
         body::before {
             content: '';
-            position: absolute;
+            position: fixed;
             top: -50%;
             left: -50%;
             width: 200%;
@@ -40,6 +47,7 @@
             background-size: 30px 30px;
             animation: move 20s linear infinite;
             opacity: 0.5;
+            pointer-events: none;
         }
         
         @keyframes move {
@@ -49,13 +57,14 @@
         
         .container {
             text-align: center;
-            padding: 2.5rem;
+            padding: 2rem;
             max-width: 600px;
+            width: 90%;
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             border-radius: 20px;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            margin: 1rem;
+            margin: 20px auto;
             position: relative;
             border: 1px solid rgba(255, 255, 255, 0.3);
             animation: fadeIn 0.8s ease-out;
@@ -132,6 +141,13 @@
             line-height: 1.6;
         }
         
+        @media (max-width: 600px) {
+            .description {
+                font-size: 1rem;
+                margin-bottom: 1.5rem;
+            }
+        }
+        
         .time-block {
             background: linear-gradient(135deg, rgba(211, 47, 47, 0.1) 0%, rgba(25, 118, 210, 0.1) 100%);
             border-radius: 12px;
@@ -178,6 +194,20 @@
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
         
+        @media (hover: hover) {
+            .feature:hover {
+                background: linear-gradient(135deg, rgba(211, 47, 47, 0.1) 0%, rgba(25, 118, 210, 0.1) 100%);
+                transform: translateY(-2px);
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            }
+        }
+        
+        @media (hover: none) {
+            .feature:active {
+                background: linear-gradient(135deg, rgba(211, 47, 47, 0.1) 0%, rgba(25, 118, 210, 0.1) 100%);
+            }
+        }
+        
         .feature-icon {
             font-size: 1.5rem;
             margin-bottom: 0.5rem;
@@ -213,10 +243,67 @@
         }
         
         @media (max-width: 600px) {
-            .logo h1 { font-size: 2.5rem; }
-            h2 { font-size: 1.5rem; }
+            body {
+                align-items: flex-start;
+                padding: 10px 0;
+            }
+            
+            .container {
+                padding: 1.5rem;
+                width: 95%;
+                margin: 10px auto;
+            }
+            
+            .logo h1 { 
+                font-size: 2.2rem; 
+            }
+            
+            h2 { 
+                font-size: 1.4rem; 
+            }
+            
             .features {
                 grid-template-columns: 1fr;
+                gap: 0.8rem;
+            }
+            
+            .feature {
+                padding: 0.8rem;
+            }
+            
+            .time-block {
+                padding: 1rem;
+            }
+            
+            .time-block .value {
+                font-size: 1.1rem;
+            }
+        }
+        
+        @media (max-height: 700px) {
+            body {
+                align-items: flex-start;
+                padding-top: 10px;
+            }
+        }
+        
+        @media (min-width: 1200px) {
+            .container {
+                padding: 3rem;
+            }
+        }
+        
+        @media (max-width: 380px) {
+            .logo h1 { 
+                font-size: 1.8rem; 
+            }
+            
+            .container {
+                padding: 1.2rem;
+            }
+            
+            .features {
+                font-size: 0.85rem;
             }
         }
     </style>
